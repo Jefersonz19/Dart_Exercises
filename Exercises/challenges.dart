@@ -2,18 +2,17 @@ import 'dart:io';
 import 'dart:math';
 
 //Exercise 1
-
 class Power 
 {
   void MainPower() {
     print('Ingresa un número: ');
-    double n = double.parse(stdin.readLineSync()!);
+    int n = int.parse(stdin.readLineSync()!);
     
     if (n > 0) {
       num result = pow(n, 2);
       print('Resultado: El número elevado al cuadrado es $result');
     } else if (n < 0 ){
-      print('El número debe ser positivo para calcular la potencia.');
+      print('Resultado: Número negativo.');
     } else {
       print("Resultado: 0");
     }
@@ -26,10 +25,10 @@ class DoubleTriple
     void MainDoubleTriple()
     {
         print("Ingrese el primer número: ");
-        double a = double.parse(stdin.readLineSync()!);
+        int a = int.parse(stdin.readLineSync()!);
 
         print("Ingrese el segundo número: ");
-        double b = double.parse(stdin.readLineSync()!);
+        int b = int.parse(stdin.readLineSync()!);
         
         if (a > b)
             print("Resultado: ${a*2}");
@@ -106,11 +105,11 @@ class Salary
   void MainSalary() {
     print("Ingrese su salario anual ");
     double salary = double.parse(stdin.readLineSync()!);
-    double spare=0;
+    int spare=0;
     if (salary > 12000)
       {
         salary = salary-12000;
-        spare = salary*0.15;
+        spare = (salary*0.15).toInt();
         print("Resultado: ${spare}");
       } else {
           print("Resultado: No debe Impuestos ");
@@ -175,7 +174,11 @@ class Fractions
     int resultnum = (num1*den2)-(num2*den1);
     int resultden = den1*den2;
 
-    print("Resultado: $resultnum/$resultden");
+    if (resultnum == 0){
+      print("Resultado: 0");
+    } else {
+          print("Resultado: $resultnum/$resultden");
+    }
   }
 
   List<int> getnumYdenom(String fraccion){
@@ -210,7 +213,7 @@ class Average
   void MainAverage() {
     double sum =0;
     for (int i=0; i<4; i++){
-    print("Ingrese el numero ${i+1} : ");
+    print("Ingrese el numero ${i+1}: ");
     int n = int.parse(stdin.readLineSync()!);
     sum += n;
     }
@@ -226,7 +229,7 @@ void MainSmallest() {
     List <double> numbers = [];
 
     for (int i=0; i<n; i++){
-        print("Ingrese el numero ${i+1} : ");
+        print("Ingrese el numero ${i+1}: ");
         double number = double.parse(stdin.readLineSync()!);
         numbers.add(number);
     }
@@ -290,19 +293,19 @@ class Factorial
     int num = int.parse(stdin.readLineSync()!);
 
     if (num >=0 ){
-        double factorial = Calculate(num);
+        int factorial = Calculate(num);
         print("Resultado: ${factorial} ");
      }  else {
         print("El factorial no puede ser calculado ");
         }
     }
 
-    static double Calculate(int num){
+    static int Calculate(int num){
         if (num == 0){
             return 1;
         }
 
-        double factorial = 1;
+        int factorial = 1;
         for (int i=1; i<=num; i++) {
             factorial *= i;
         }

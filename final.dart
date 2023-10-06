@@ -8,7 +8,9 @@ void main(){
   var menu = new Menu();
   menu.MostrarMenu();
 
+
   while(true){
+
     String? opc = stdin.readLineSync()?.toLowerCase();
     if (opc == 's' || opc == 'S') {
       break;
@@ -95,12 +97,13 @@ void main(){
         break;
 
         default:
-          print(" Opcion no válida ");
           menu.MostrarMenu();
         break;
-            }
+      }
         } else {
           print(" Opcion no valida. Por favor ingrese una opción entre 1 y 15 o presione S para salir ");
         }
+
+        print("\n Digite de nuevo una Opción en el menú o 's' para salir: ");
     }
 }

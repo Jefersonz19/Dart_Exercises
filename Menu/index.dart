@@ -18,5 +18,6 @@ class Menu {
     print("13. Vowel Counter");
     print("14. Factorial Finder");
     print("15. InRange Validator");
+    print("\n Digite una Opción:");
   }
 }
